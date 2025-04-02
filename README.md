@@ -1,76 +1,23 @@
-# Face-Based Attendance System
+# Face Recognition Based Attendance System
 
-## 📌 Project Overview
-This project is a **Face-Based Attendance System** implemented using **Raspberry Pi 4B** and **facial recognition technology**. The system ensures students are present for the entire class duration by verifying attendance both **before the class starts** and **after the class ends**.
+This project is a face recognition-based attendance system that uses OpenCV and Python. The system uses a camera to capture images of individuals and then compares them with the images in the database to mark attendance.
 
-## 🎯 Features
-- **Dual Verification**: Students must check in **before** and **after** class to be marked present.
-- **Timer Lock**: Prevents multiple scans within a short period to avoid false attendance.
-- **Facial Recognition**: Uses OpenCV and face recognition models to verify students.
-- **Raspberry Pi Compatible**: Designed to work efficiently on Raspberry Pi 4B.
+## Installation
 
-## 🛠️ Tech Stack
-- **Programming Language**: Python
-- **Libraries Used**:
-  - `OpenCV` - for image processing
-  - `face_recognition` - for facial detection & recognition
-  - `NumPy` - for numerical operations
-  - `Pandas` - for attendance data management
+1. Clone the repository to your local machine. ``` git clone https://github.com/Arijit1080/Face-Recognition-Based-Attendance-System ```
+2. Install the required packages using ```pip install -r requirements.txt```.
+3. Download the dlib models from https://drive.google.com/drive/folders/12It2jeNQOxwStBxtagL1vvIJokoz-DL4?usp=sharing and place the data folder inside the repo
 
-## 🚀 Installation & Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Ayan1302/FaceDetection_Attendance_system.git
-   cd FaceDetection_Attendance_system
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the attendance system:
-   ```bash
-   python app.py
-   ```
+## Usage
 
-## 📸 How It Works
-1. The system captures images of students before and after class.
-2. It compares detected faces with the registered database.
-3. Attendance is marked only if both scans are successful.
-4. A **timer lock** prevents resubmission attempts before class ends.
-5. The final attendance report is generated in a database file.
+1. Collect the Faces Dataset by running ``` python get_faces_from_camera_tkinter.py``` .
+2. Convert the dataset into ```python features_extraction_to_csv.py```.
+3. To take the attendance run ```python attendance_taker.py``` .
+4. Check the Database by ```python app.py```.
 
-## 📂 Project Structure
-```
-FaceDetection_Attendance_system/
-│-- .git/                              # Git repository folder
-│-- data/                              # Folder to store student images
-│-- templates/                         # HTML templates (if applicable)
-│-- venv/                              # Virtual environment
-│-- app.py                             # Main script
-│-- attendance                         # Database file storing records
-│-- attendance_taker.py                # Script to handle attendance marking
-│-- features_extraction_to_csv.py      # Extracts features from images
-│-- get_faces_from_camera_tkinter.py   # Face capturing interface using Tkinter
-│-- logo.jpeg                          # Project logo
-│-- projectgui.py                      # GUI interface for the system
-│-- README.md                          # Documentation
-│-- requirements.txt                    # List of dependencies
-```
 
-## 📝 Future Improvements
-- Integrate with a **web dashboard** for real-time attendance tracking.
-- Implement **RFID-based verification** for additional security.
-- Optimize **face detection speed** for faster processing.
+## Contributing
 
-## 📜 License
-This project is open-source under the **MIT License**.
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have any suggestions.
 
-## 🤝 Contributing
-Pull requests are welcome! Feel free to suggest improvements or report issues.
-
-## 📧 Contact
-For any queries, reach out at **your-email@example.com**
-
----
-🚀 Happy Coding!
 
