@@ -21,15 +21,15 @@ This project is a **Face-Based Attendance System** implemented using **Raspberry
 1. Clone the repository:
    ```bash
    git clone https://github.com/Ayan1302/FaceDetection_Attendance_system.git
-   cd face-attendance-system
+   cd FaceDetection_Attendance_system
    ```
 2. Install dependencies:
    ```bash
-   pip install opencv-python face-recognition numpy pandas
+   pip install -r requirements.txt
    ```
 3. Run the attendance system:
    ```bash
-   python attendance_system.py
+   python app.py
    ```
 
 ## 📸 How It Works
@@ -37,17 +37,24 @@ This project is a **Face-Based Attendance System** implemented using **Raspberry
 2. It compares detected faces with the registered database.
 3. Attendance is marked only if both scans are successful.
 4. A **timer lock** prevents resubmission attempts before class ends.
-5. The final attendance report is generated in a CSV file.
+5. The final attendance report is generated in a database file.
 
 ## 📂 Project Structure
 ```
-face-attendance-system/
-│-- data/                # Folder to store student images
-│-- models/              # Trained face recognition models
-│-- attendance.csv       # Logs of attendance records
-│-- attendance_system.py # Main script
-│-- requirements.txt     # List of dependencies
-│-- README.md            # Documentation
+FaceDetection_Attendance_system/
+│-- .git/                              # Git repository folder
+│-- data/                              # Folder to store student images
+│-- templates/                         # HTML templates (if applicable)
+│-- venv/                              # Virtual environment
+│-- app.py                             # Main script
+│-- attendance                         # Database file storing records
+│-- attendance_taker.py                # Script to handle attendance marking
+│-- features_extraction_to_csv.py      # Extracts features from images
+│-- get_faces_from_camera_tkinter.py   # Face capturing interface using Tkinter
+│-- logo.jpeg                          # Project logo
+│-- projectgui.py                      # GUI interface for the system
+│-- README.md                          # Documentation
+│-- requirements.txt                    # List of dependencies
 ```
 
 ## 📝 Future Improvements
